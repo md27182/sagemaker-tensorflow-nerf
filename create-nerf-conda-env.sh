@@ -11,7 +11,7 @@ git clone https://github.com/md27182/lbx-nerf.git /home/ec2-user/SageMaker/lbx-n
 # Install a separate conda installation via Miniconda
 WORKING_DIR=/home/ec2-user/SageMaker/custom-miniconda
 mkdir -p "$WORKING_DIR"
-wget https://repo.anaconda.com/miniconda/Miniconda3-4.6.14-Linux-x86_64.sh -O "$WORKING_DIR/miniconda.sh"
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh -O "$WORKING_DIR/miniconda.sh"
 bash "$WORKING_DIR/miniconda.sh" -b -u -p "$WORKING_DIR/miniconda"
 rm -rf "$WORKING_DIR/miniconda.sh"
 
@@ -28,6 +28,3 @@ pip install --quiet boto3
 python -m ipykernel install --user --name "nerf" --display-name "Custom (NERF)"
 
 EOF
-
-# echo "Restarting the Jupyter server.."
-# restart jupyter-server
