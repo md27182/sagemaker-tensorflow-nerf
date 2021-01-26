@@ -1,10 +1,6 @@
 # Lightbox Sagemaker set up repo
 Notebook instance for use with SageMaker; intended for processing nerfs using the original tensorflow-based code
 
-- Which settings to choose when creating a new notebook instance
-- One-time startup script
-- How lifecycle scripts work
-
 ## Quickstart ##
 
 Create new notebook instance in SageMaker with the following options:
@@ -38,4 +34,4 @@ source ~/SageMaker/custom-miniconda/miniconda/bin/activate
 source activate nerf
 ~~~
 
-To create the on-start lifecycle script, I modified this [best-practices on-start script](https://github.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples/blob/master/scripts/persistent-conda-ebs/on-start.sh) to check to see if the bash script above has been run yet. If not, it does nothing to avoid errors when starting the instance for the first time.
+To create the on-start lifecycle script included in the configuration "lifecycle-setup-tflow-nerf-on-start-only", I modified this [best-practices on-start script](https://github.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples/blob/master/scripts/persistent-conda-ebs/on-start.sh) to check to see if the bash script above has been run yet. If not, it does nothing to avoid errors when starting the instance for the first time.
