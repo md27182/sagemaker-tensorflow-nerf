@@ -24,7 +24,7 @@ This could take up to 10 minutes to run. Once it's finished, refresh the jupyter
 ### Lifecycle scripts ###
 When the on-create script involves installing a large number of libraries, it is best to move that to a bash script and run it manually - otherwise the lifecycle script may timeout after 5 minutes. In our case that bash script is "create-nerf-conda-env.sh".
 
-Our bash script, as well as this [best-practices on-create lifecycle script](https://github.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples/blob/master/scripts/persistent-conda-ebs/on-create.sh), creates a separate conda installation in "custom-miniconda/miniconda". This is the installation that gets used when you want to use the custom nerf environment. If you simply open up a fresh terminal and type
+Our bash script creates a separate conda installation in "custom-miniconda/miniconda". This is the installation that gets used when you want to use the custom nerf environment. If you simply open up a fresh terminal and type
 ~~~
 source activate nerf
 ~~~
